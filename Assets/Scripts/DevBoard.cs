@@ -7,8 +7,11 @@ public class DevBoard : MonoBehaviour
     public new string name;
     public List<GpioPin> pins = new();
 
+    [Header("Selector UI")]
+    public PinSelectorUI selectorUI;
+
     private void OnMouseDown()
     {
-        Debug.Log("Board clicked.");
+        selectorUI.ShowPins(pins);
     }
 }

@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbb61fd84782f84f95af5fe2537e629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: GPIO13
   type: 000000000d000000
   connectionPount: {fileID: 6124577639530780276}
 --- !u!1 &3409665761222727387
@@ -178,6 +178,7 @@ MonoBehaviour:
   pins:
   - {fileID: 7491606483396137945}
   - {fileID: 681204333953084130}
+  selectorUI: {fileID: 0}
 --- !u!65 &2127965870857594235
 BoxCollider:
   m_ObjectHideFlags: 0
