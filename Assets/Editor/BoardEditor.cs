@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -20,7 +21,8 @@ namespace Editor
                 if (pinsParent is not null)
                 {
                     board.pins.Clear();
-                    var pins = pinsParent.GetComponentsInChildren<GpioPin>();
+                    // Bad idea use this xD
+                    var pins = pinsParent.GetComponentsInChildren<GpioPin>().OrderBy(p => p.name);
                     board.pins.AddRange(pins);
                     
                     EditorUtility.SetDirty(board);

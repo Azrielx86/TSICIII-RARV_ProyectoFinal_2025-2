@@ -16,5 +16,7 @@ public enum PinType
     SpiMosi,
     SpiMiso,
     SpiSck,
-    SpiCs
+    SpiCs,
+    Reset,
+    ARef
 }

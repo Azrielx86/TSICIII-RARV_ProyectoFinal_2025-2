@@ -157,7 +157,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2512, y: 3512}
+  m_SizeDelta: {x: 1636, y: 3327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231279391
 MonoBehaviour:
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Color: {r: 0.06666667, g: 0.06666667, b: 0.10588236, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -241,12 +241,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231279389}
   m_CullTransparentMesh: 1
---- !u!224 &393747021 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8260505759997923231, guid: 82f8dd7123c63cb45b470c399c77358a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3875291786232697275}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &599052496
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +584,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2960, y: 1440}
+  m_ReferenceResolution: {x: 2160, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -608,7 +602,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 614522412}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -619,7 +613,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1158845346
 RectTransform:
@@ -718,6 +712,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2127965870857594235, guid: 848ac393b0415f846b36bdd0608d648f,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127965870857594235, guid: 848ac393b0415f846b36bdd0608d648f,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2457624042647261570, guid: 848ac393b0415f846b36bdd0608d648f,
         type: 3}
       propertyPath: selectorUI
@@ -795,6 +799,7 @@ GameObject:
   - component: {fileID: 1950944882}
   - component: {fileID: 1950944881}
   - component: {fileID: 1950944883}
+  - component: {fileID: 1950944884}
   m_Layer: 5
   m_Name: PinSelector
   m_TagString: Untagged
@@ -819,8 +824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -256, y: -2048}
+  m_AnchoredPosition: {x: 0, y: -4502}
+  m_SizeDelta: {x: -277, y: -770}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950944881
 MonoBehaviour:
@@ -835,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.11764707, g: 0.11764707, b: 0.18039216, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -875,6 +880,29 @@ MonoBehaviour:
   pinSelectorItemPrefab: {fileID: 7758330439777225036, guid: 82f8dd7123c63cb45b470c399c77358a,
     type: 3}
   contentContainer: {fileID: 2003885760}
+  uiAnimator: {fileID: 1950944884}
+--- !u!95 &1950944884
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950944879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b90cfb1a9d6fb044b08f73555d060de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2003885759
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +935,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 393747021}
+  - {fileID: 5144513072401817124}
   m_Father: {fileID: 231279390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -968,7 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.06666667, g: 0.06666667, b: 0.10588236, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1004,7 +1032,12 @@ PrefabInstance:
     - target: {fileID: 6588693381727210481, guid: 82f8dd7123c63cb45b470c399c77358a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -497.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588693381727210481, guid: 82f8dd7123c63cb45b470c399c77358a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -215.51
       objectReference: {fileID: 0}
     - target: {fileID: 7758330439777225036, guid: 82f8dd7123c63cb45b470c399c77358a,
         type: 3}
@@ -1044,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 8260505759997923231, guid: 82f8dd7123c63cb45b470c399c77358a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2512
+      value: 1626
       objectReference: {fileID: 0}
     - target: {fileID: 8260505759997923231, guid: 82f8dd7123c63cb45b470c399c77358a,
         type: 3}
@@ -1116,12 +1149,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82f8dd7123c63cb45b470c399c77358a, type: 3}
+--- !u!224 &5144513072401817124 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8260505759997923231, guid: 82f8dd7123c63cb45b470c399c77358a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3875291786232697275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1158845346}
   - {fileID: 705507995}
   - {fileID: 614522413}
   - {fileID: 1318691629}
-  - {fileID: 1158845346}
   - {fileID: 1161247753}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DevBoard : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class DevBoard : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        
         selectorUI.ShowPins(pins);
     }
 }
