@@ -63,6 +63,7 @@ public class PinSelectorUI : MonoBehaviour
             button.onClick.AddListener(() =>
             {
                 Debug.Log($"Pin {pin.id} clicked");
+                FindFirstObjectByType<PinConnectionManager>().SelectPin(pin);
                 uiAnimator.SetBool(IsOpen, false);
             });
         }
