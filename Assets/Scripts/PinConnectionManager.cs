@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using NUnit.Framework;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PinConnectionManager : MonoBehaviour
 {
@@ -10,13 +11,14 @@ public class PinConnectionManager : MonoBehaviour
 
     [CanBeNull]
     private GpioPin _connectionA;
+
     [CanBeNull]
     private GpioPin _connectionB;
-    
-    private readonly List<GameObject> _activeMarkers = new();
-    private readonly List<Tuple<GpioPin, GpioPin>> _activeConnections = new();
 
-    
+    private readonly List<GameObject> _activeMarkers = new();
+
+    public readonly List<PinConnection> ActiveConnections = new();
+
     public void SelectPin(GpioPin pin)
     {
         if (_connectionA is null)
@@ -38,6 +40,7 @@ public class PinConnectionManager : MonoBehaviour
     private void MarkPin(GpioPin pin)
     {
         var marker = Instantiate(markerPrefab, pin.connectionPount.position, Quaternion.identity);
+        marker.transform.SetParent(pin.transform, worldPositionStays: true);
         _activeMarkers.Add(marker);
     }
 
@@ -45,19 +48,56 @@ public class PinConnectionManager : MonoBehaviour
     {
         if (_connectionA is null || _connectionB is null)
             return;
-        
+
         Debug.Log($"Creating connection between {_connectionA.id} and {_connectionB.id}");
-        
+
         // TODO : Validate Connections
-        
-        _activeConnections.Add(new Tuple<GpioPin, GpioPin>(_connectionA, _connectionB));
-        
+
+        var connectionId = Guid.NewGuid();
+        var color = GenerateRandomColor(Color.white, 0.8f);
+
+        // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+        foreach (var marker in _activeMarkers)
+        {
+            var pm = marker.GetComponent<PinMarker>();
+            pm.ConnectionId = connectionId;
+            pm.SetColor(color);
+        }
+
+        ActiveConnections.Add(
+            new PinConnection
+            {
+                ID = connectionId,
+                ConnectionA = new ConnectionInfo
+                {
+                    ConnectionPoint = _connectionA,
+                    Origin = _connectionA.transform.parent.GetComponentInParent<DevBoard>()
+                },
+                ConnectionB = new ConnectionInfo
+                {
+                    ConnectionPoint = _connectionB,
+                    Origin = _connectionB.transform.parent.GetComponentInParent<DevBoard>()
+                },
+                Markers = _activeMarkers.ToArray(),
+                Color = color
+            }
+        );
+
         _connectionA = null;
         _connectionB = null;
-
-        foreach (var marker in _activeMarkers)
-            Destroy(marker);
-        
         _activeMarkers.Clear();
+    }
+
+    private static Color GenerateRandomColor(Color mix, float mixRatio)
+    {
+        var randRed = Random.Range(0, 256);
+        var randGreen = Random.Range(0, 256);
+        var randBlue = Random.Range(0, 256);
+
+        var red = (randRed + mix.r) * mixRatio;
+        var green = (randGreen + mix.g) * mixRatio;
+        var blue = (randBlue + mix.b) * mixRatio;
+
+        return new Color(red / 256.0f, green / 256.0f, blue / 256.0f);
     }
 }

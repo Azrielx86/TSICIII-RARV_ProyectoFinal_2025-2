@@ -15,7 +15,7 @@ public class PinSelectorUI : MonoBehaviour
     public void ShowPins(List<GpioPin> pins)
     {
         uiAnimator.SetBool(IsOpen, true);
-        
+
         foreach (Transform child in contentContainer)
         {
             Destroy(child.gameObject);
@@ -64,10 +64,12 @@ public class PinSelectorUI : MonoBehaviour
             {
                 Debug.Log($"Pin {pin.id} clicked");
                 FindFirstObjectByType<PinConnectionManager>().SelectPin(pin);
-                uiAnimator.SetBool(IsOpen, false);
+                CloseMenu();
             });
         }
     }
+
+    public void CloseMenu() => uiAnimator.SetBool(IsOpen, false);
 
     private static Color LumaText(Color color) =>
         0.299f * color.r + 0.587f * color.g + 0.114f * color.b > 0.5f ? Color.black : Color.white;
