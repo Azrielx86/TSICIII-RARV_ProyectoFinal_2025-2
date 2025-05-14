@@ -6,14 +6,14 @@ using UnityEngine;
 
 namespace Editor
 {
-    [CustomEditor(typeof(DevBoard))]
+    [CustomEditor(typeof(ElectronicComponent))]
     public class BoardEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
 
-            var board = (DevBoard)target;
+            var board = (ElectronicComponent)target;
 
             if (GUILayout.Button("Detect Pins"))
             {

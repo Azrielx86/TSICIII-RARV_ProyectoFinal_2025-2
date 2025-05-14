@@ -71,12 +71,12 @@ public class PinConnectionManager : MonoBehaviour
                 ConnectionA = new ConnectionInfo
                 {
                     ConnectionPoint = _connectionA,
-                    Origin = _connectionA.transform.parent.GetComponentInParent<DevBoard>()
+                    Origin = _connectionA.transform.parent.GetComponentInParent<ElectronicComponent>()
                 },
                 ConnectionB = new ConnectionInfo
                 {
                     ConnectionPoint = _connectionB,
-                    Origin = _connectionB.transform.parent.GetComponentInParent<DevBoard>()
+                    Origin = _connectionB.transform.parent.GetComponentInParent<ElectronicComponent>()
                 },
                 Markers = _activeMarkers.ToArray(),
                 Color = color

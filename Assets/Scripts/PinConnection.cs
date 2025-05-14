@@ -5,7 +5,7 @@ using UnityEngine;
 public struct ConnectionInfo
 {
     public GpioPin ConnectionPoint;
-    public DevBoard Origin;
+    public ElectronicComponent Origin;
 }
 
 public class PinConnection

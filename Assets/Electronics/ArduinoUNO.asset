@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c258f509794d42bb910da19c8df7313a, type: 3}
+  m_Name: ArduinoUNO
+  m_EditorClassIdentifier: 
+  ComponentName: Arduino UNO
+  Description: The Arduino UNO is the best board to get started with electronics
+    and coding. If this is your first experience tinkering with the platform, the
+    UNO is the most robust board you can start playing with. The UNO is the most
+    used and documented board of the whole Arduino family.
+  MinOperativeVoltage: 5
+  MaxOperativeVoltage: 5
+  ComponentType: 0

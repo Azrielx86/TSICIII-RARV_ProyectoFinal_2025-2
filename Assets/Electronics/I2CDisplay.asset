@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c258f509794d42bb910da19c8df7313a, type: 3}
+  m_Name: I2CDisplay
+  m_EditorClassIdentifier: 
+  ComponentName: Display LCD I2C
+  Description: "Este display LCD cuenta con interfaz I2C que est\xE1 basado en el
+    controlador PCF8574, el cual es un expansor de entradas y salidas digitales controlado
+    por I2C. La direcci\xF3n I2C por defecto es 0x27 en otros casos 0x3F."
+  MinOperativeVoltage: 3.3
+  MaxOperativeVoltage: 5
+  ComponentType: 3

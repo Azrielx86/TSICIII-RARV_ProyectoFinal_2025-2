@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-/// <summary>
-/// TODO : Change name to ElectonicComponent
-/// </summary>
-public class DevBoard : MonoBehaviour
+public class ElectronicComponent : MonoBehaviour
 {
+    [Header("Component info")]
     public new string name;
+
+    public ComponentInfo ComponentInfo;
     public List<GpioPin> pins = new();
 
     [Header("Selector UI")]
@@ -24,7 +24,7 @@ public class DevBoard : MonoBehaviour
 #endif
     }
 
-    
+
     private void Update()
     {
 #if (PLATFORM_ANDROID || UNITY_ANDROID) && !UNITY_EDITOR
