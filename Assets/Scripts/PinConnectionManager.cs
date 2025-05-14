@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -102,11 +103,9 @@ public class PinConnectionManager : MonoBehaviour
     public void ShowConnection(PinConnection connection)
     {
         var lineGameObject = new GameObject();
+        var conn = lineGameObject.AddComponent<ConnectionLine>();
         var line = lineGameObject.AddComponent<LineRenderer>();
-        
-        line.positionCount = 2;
-        line.startWidth = 0.05f;
-        line.endWidth = 0.05f;
+        conn.lineRenderer = line;
         
         var diffuseMat = new Material(Shader.Find("Standard"))
         {
@@ -114,9 +113,13 @@ public class PinConnectionManager : MonoBehaviour
         };
         line.material = diffuseMat;
 
-        line.SetPosition(0, connection.ConnectionA.ConnectionPoint.transform.position);
-        line.SetPosition(1, connection.ConnectionB.ConnectionPoint.transform.position);
+        conn.pointA = connection.ConnectionA.ConnectionPoint.gameObject;
+        conn.pointB = connection.ConnectionB.ConnectionPoint.gameObject;
         
+        //
+        // line.SetPosition(0, connection.ConnectionA.ConnectionPoint.transform.position);
+        // line.SetPosition(1, connection.ConnectionB.ConnectionPoint.transform.position);
+        //
         Destroy(lineGameObject, 5);
         Destroy(diffuseMat, 5);
     }

@@ -40,6 +40,7 @@ public class ConnectionsUI : MonoBehaviour
             btnVIew.onClick.AddListener(() =>
             {
                 FindFirstObjectByType<PinConnectionManager>().ShowConnection(activeConnection);
+                CloseMenu();
             });
             
             var btnRemove = info.transform.Find("BtnRemove").GetComponent<Button>();
