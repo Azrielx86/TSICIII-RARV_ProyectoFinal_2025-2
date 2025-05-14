@@ -36,7 +36,12 @@ public class ConnectionsUI : MonoBehaviour
             srcB.text = activeConnection.ConnectionB.Origin.name;
             connColor.color = activeConnection.Color;
 
-            // TODO : Add button action
+            var btnVIew = info.transform.Find("BtnView").GetComponent<Button>();
+            btnVIew.onClick.AddListener(() =>
+            {
+                FindFirstObjectByType<PinConnectionManager>().ShowConnection(activeConnection);
+            });
+            
             var btnRemove = info.transform.Find("BtnRemove").GetComponent<Button>();
             btnRemove.onClick.AddListener(() =>
             {

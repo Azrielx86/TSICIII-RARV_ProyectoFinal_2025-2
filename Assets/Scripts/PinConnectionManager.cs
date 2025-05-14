@@ -19,6 +19,8 @@ public class PinConnectionManager : MonoBehaviour
 
     public readonly List<PinConnection> ActiveConnections = new();
 
+    public Material lineMaterial;
+
     public void SelectPin(GpioPin pin)
     {
         if (_connectionA is null)
@@ -95,6 +97,28 @@ public class PinConnectionManager : MonoBehaviour
 
         ActiveConnections.Remove(connection);
 
+    }
+
+    public void ShowConnection(PinConnection connection)
+    {
+        var lineGameObject = new GameObject();
+        var line = lineGameObject.AddComponent<LineRenderer>();
+        
+        line.positionCount = 2;
+        line.startWidth = 0.05f;
+        line.endWidth = 0.05f;
+        
+        var diffuseMat = new Material(Shader.Find("Standard"))
+        {
+            color = connection.Color
+        };
+        line.material = diffuseMat;
+
+        line.SetPosition(0, connection.ConnectionA.ConnectionPoint.transform.position);
+        line.SetPosition(1, connection.ConnectionB.ConnectionPoint.transform.position);
+        
+        Destroy(lineGameObject, 5);
+        Destroy(diffuseMat, 5);
     }
 
     private static Color GenerateRandomColor(Color mix, float mixRatio)
