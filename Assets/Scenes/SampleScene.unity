@@ -202,8 +202,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1950944883}
-        m_TargetAssemblyTypeName: PinSelectorUI, Assembly-CSharp
+      - m_Target: {fileID: 776287449}
+        m_TargetAssemblyTypeName: ConnectionsUI, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
@@ -1272,6 +1272,7 @@ GameObject:
   - component: {fileID: 776287448}
   - component: {fileID: 776287447}
   - component: {fileID: 776287449}
+  - component: {fileID: 776287450}
   m_Layer: 5
   m_Name: PinConnectionsMenu
   m_TagString: Untagged
@@ -1293,6 +1294,7 @@ RectTransform:
   m_Children:
   - {fileID: 209164245}
   - {fileID: 32476059}
+  - {fileID: 1796826769}
   m_Father: {fileID: 1158845346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1354,6 +1356,29 @@ MonoBehaviour:
     type: 3}
   contentContainer: {fileID: 1809669161}
   connectionManager: {fileID: 1673466984}
+  uiAnimator: {fileID: 776287450}
+--- !u!95 &776287450
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776287445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3fe42a0a5012da4283c3750c29aaa14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &888430465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1609,6 @@ RectTransform:
   - {fileID: 1950944880}
   - {fileID: 888430466}
   - {fileID: 776287446}
-  - {fileID: 1796826769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1967,11 +1991,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 474949979}
-  m_Father: {fileID: 1158845346}
+  m_Father: {fileID: 776287446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 997.5, y: 1522}
+  m_AnchoredPosition: {x: -1090, y: 1377.6}
   m_SizeDelta: {x: 241, y: 182.738}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796826770

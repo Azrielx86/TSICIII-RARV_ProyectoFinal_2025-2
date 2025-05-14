@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: I2C LCD Display
-  ComponentInfo: {fileID: 11400000, guid: 05aaf6c78aae54d468f9485941154fb9, type: 2}
+  componentInfo: {fileID: 11400000, guid: 05aaf6c78aae54d468f9485941154fb9, type: 2}
   pins:
   - {fileID: 370606095521176608}
   - {fileID: 4978666314098946942}

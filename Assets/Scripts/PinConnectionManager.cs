@@ -36,7 +36,7 @@ public class PinConnectionManager : MonoBehaviour
             Debug.LogWarning("Already selected two pins. Please create a connection or reset.");
         }
     }
-
+    
     private void MarkPin(GpioPin pin)
     {
         var marker = Instantiate(markerPrefab, pin.connectionPount.position, Quaternion.identity);
@@ -86,6 +86,15 @@ public class PinConnectionManager : MonoBehaviour
         _connectionA = null;
         _connectionB = null;
         _activeMarkers.Clear();
+    }
+
+    public void RemoveConnection(PinConnection connection)
+    {
+        foreach (var marker in connection.Markers)
+            Destroy(marker);
+
+        ActiveConnections.Remove(connection);
+
     }
 
     private static Color GenerateRandomColor(Color mix, float mixRatio)

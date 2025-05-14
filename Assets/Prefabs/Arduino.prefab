@@ -890,7 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Arduino UNO
-  ComponentInfo: {fileID: 11400000, guid: acfbb8b704adf7b4a98b52ecc828d519, type: 2}
+  componentInfo: {fileID: 11400000, guid: acfbb8b704adf7b4a98b52ecc828d519, type: 2}
   pins:
   - {fileID: 8027784552195821081}
   - {fileID: 6095592780013465169}

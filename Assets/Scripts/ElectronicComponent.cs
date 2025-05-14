@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class ElectronicComponent : MonoBehaviour
 {
     [Header("Component info")]
     public new string name;
 
-    public ComponentInfo ComponentInfo;
+    public ComponentInfo componentInfo;
     public List<GpioPin> pins = new();
 
     [Header("Selector UI")]
