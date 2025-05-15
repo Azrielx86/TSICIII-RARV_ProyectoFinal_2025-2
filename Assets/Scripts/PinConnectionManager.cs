@@ -39,7 +39,7 @@ public class PinConnectionManager : MonoBehaviour
             Debug.LogWarning("Already selected two pins. Please create a connection or reset.");
         }
     }
-    
+
     private void MarkPin(GpioPin pin)
     {
         var marker = Instantiate(markerPrefab, pin.connectionPount.position, Quaternion.identity);
@@ -54,8 +54,6 @@ public class PinConnectionManager : MonoBehaviour
 
         Debug.Log($"Creating connection between {_connectionA.id} and {_connectionB.id}");
 
-        // TODO : Validate Connections
-
         var connectionId = Guid.NewGuid();
         var color = GenerateRandomColor(Color.white, 0.8f);
 
@@ -67,24 +65,43 @@ public class PinConnectionManager : MonoBehaviour
             pm.SetColor(color);
         }
 
-        ActiveConnections.Add(
-            new PinConnection
+        var candidateConnectionA = new ConnectionInfo
+        {
+            ConnectionPoint = _connectionA,
+            Origin = _connectionA.transform.parent.GetComponentInParent<ElectronicComponent>()
+        };
+        var pinAIndex = candidateConnectionA.Origin.GetPinIndex(_connectionA);
+
+        var candidateConnectionB = new ConnectionInfo
+        {
+            ConnectionPoint = _connectionB,
+            Origin = _connectionB.transform.parent.GetComponentInParent<ElectronicComponent>()
+        };
+        var pinBIndex = candidateConnectionB.Origin.GetPinIndex(_connectionB);
+
+        var validA = candidateConnectionA.Origin.ValidateConnection(candidateConnectionB, pinAIndex);
+        var validB = candidateConnectionB.Origin.ValidateConnection(candidateConnectionA, pinBIndex);
+
+        if (validA && validB)
+        {
+            var pinConnection = new PinConnection
             {
                 ID = connectionId,
-                ConnectionA = new ConnectionInfo
-                {
-                    ConnectionPoint = _connectionA,
-                    Origin = _connectionA.transform.parent.GetComponentInParent<ElectronicComponent>()
-                },
-                ConnectionB = new ConnectionInfo
-                {
-                    ConnectionPoint = _connectionB,
-                    Origin = _connectionB.transform.parent.GetComponentInParent<ElectronicComponent>()
-                },
+                ConnectionA = candidateConnectionA,
+                ConnectionB = candidateConnectionB,
                 Markers = _activeMarkers.ToArray(),
                 Color = color
-            }
-        );
+            };
+
+            if (candidateConnectionA.Origin.canBeActivated)
+                candidateConnectionA.Origin.ActivateComponent();
+
+            if (candidateConnectionB.Origin.canBeActivated)
+                candidateConnectionB.Origin.ActivateComponent();
+
+            ActiveConnections.Add(pinConnection);
+        }
+        else Debug.LogWarning("Invalid connection!");
 
         _connectionA = null;
         _connectionB = null;
@@ -96,8 +113,19 @@ public class PinConnectionManager : MonoBehaviour
         foreach (var marker in connection.Markers)
             Destroy(marker);
 
-        ActiveConnections.Remove(connection);
+        var connA = connection.ConnectionA;
+        var connB = connection.ConnectionB;
+        
+        connA.Origin.RemoveConnection(connA.ConnectionPoint);
+        connB.Origin.RemoveConnection(connB.ConnectionPoint);
+        
+        if (connA.Origin.canBeActivated)
+            connA.Origin.DeactivateComponent();
 
+        if (connB.Origin.canBeActivated)
+            connB.Origin.DeactivateComponent();
+        
+        ActiveConnections.Remove(connection);
     }
 
     public void ShowConnection(PinConnection connection)
@@ -106,7 +134,7 @@ public class PinConnectionManager : MonoBehaviour
         var conn = lineGameObject.AddComponent<ConnectionLine>();
         var line = lineGameObject.AddComponent<LineRenderer>();
         conn.lineRenderer = line;
-        
+
         var diffuseMat = new Material(Shader.Find("Standard"))
         {
             color = connection.Color
@@ -115,11 +143,7 @@ public class PinConnectionManager : MonoBehaviour
 
         conn.pointA = connection.ConnectionA.ConnectionPoint.gameObject;
         conn.pointB = connection.ConnectionB.ConnectionPoint.gameObject;
-        
-        //
-        // line.SetPosition(0, connection.ConnectionA.ConnectionPoint.transform.position);
-        // line.SetPosition(1, connection.ConnectionB.ConnectionPoint.transform.position);
-        //
+
         Destroy(lineGameObject, 5);
         Destroy(diffuseMat, 5);
     }
