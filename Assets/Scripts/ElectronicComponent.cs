@@ -65,12 +65,17 @@ public class ElectronicComponent : MonoBehaviour
     {
         requiredActivatePins.Add(pin);
     }
+
+    public void AddValidPin(GpioPin pin)
+    {
+        requiredActivatePins.Remove(pin);
+    }
     
     public bool ValidateConnection(ConnectionInfo target, int gpioPinTargetIndex)
     {
         var pin = pins[gpioPinTargetIndex];
 
-        requiredActivatePins.Remove(pin);
+        // requiredActivatePins.Remove(pin);
         
         return pin.compatiblePins.Any(pinType => target.ConnectionPoint.type.Contains(pinType));
     }

@@ -54,17 +54,6 @@ public class PinConnectionManager : MonoBehaviour
 
         Debug.Log($"Creating connection between {_connectionA.id} and {_connectionB.id}");
 
-        var connectionId = Guid.NewGuid();
-        var color = GenerateRandomColor(Color.white, 0.8f);
-
-        // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
-        foreach (var marker in _activeMarkers)
-        {
-            var pm = marker.GetComponent<PinMarker>();
-            pm.ConnectionId = connectionId;
-            pm.SetColor(color);
-        }
-
         var candidateConnectionA = new ConnectionInfo
         {
             ConnectionPoint = _connectionA,
@@ -84,6 +73,20 @@ public class PinConnectionManager : MonoBehaviour
 
         if (validA && validB)
         {
+            var connectionId = Guid.NewGuid();
+            var color = GenerateRandomColor(Color.white, 0.8f);
+
+            // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            foreach (var marker in _activeMarkers)
+            {
+                var pm = marker.GetComponent<PinMarker>();
+                pm.ConnectionId = connectionId;
+                pm.SetColor(color);
+            }
+            
+            candidateConnectionA.Origin.AddValidPin(candidateConnectionA.ConnectionPoint);
+            candidateConnectionB.Origin.AddValidPin(candidateConnectionB.ConnectionPoint);
+            
             var pinConnection = new PinConnection
             {
                 ID = connectionId,
@@ -101,7 +104,12 @@ public class PinConnectionManager : MonoBehaviour
 
             ActiveConnections.Add(pinConnection);
         }
-        else Debug.LogWarning("Invalid connection!");
+        else
+        {
+            foreach (var marker in _activeMarkers)
+                Destroy(marker);
+            Debug.LogWarning("Invalid connection!");
+        }
 
         _connectionA = null;
         _connectionB = null;
