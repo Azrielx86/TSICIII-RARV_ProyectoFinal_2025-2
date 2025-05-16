@@ -83,10 +83,10 @@ public class PinConnectionManager : MonoBehaviour
                 pm.ConnectionId = connectionId;
                 pm.SetColor(color);
             }
-            
+
             candidateConnectionA.Origin.AddValidPin(candidateConnectionA.ConnectionPoint);
             candidateConnectionB.Origin.AddValidPin(candidateConnectionB.ConnectionPoint);
-            
+
             var pinConnection = new PinConnection
             {
                 ID = connectionId,
@@ -123,18 +123,21 @@ public class PinConnectionManager : MonoBehaviour
 
         var connA = connection.ConnectionA;
         var connB = connection.ConnectionB;
-        
+
         connA.Origin.RemoveConnection(connA.ConnectionPoint);
         connB.Origin.RemoveConnection(connB.ConnectionPoint);
-        
+
         if (connA.Origin.canBeActivated)
             connA.Origin.DeactivateComponent();
 
         if (connB.Origin.canBeActivated)
             connB.Origin.DeactivateComponent();
-        
+
         ActiveConnections.Remove(connection);
     }
+
+    public void ShowAllConnections() => ActiveConnections.ForEach(ShowConnection);
+
 
     public void ShowConnection(PinConnection connection)
     {

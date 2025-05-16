@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿using NUnit.Framework;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "ComponentInfo", menuName = "Electronics/Component Info")]
 public class ComponentInfo : ScriptableObject
 {
-    public string ComponentName;
+    public string componentName;
+    public string componentManufacturer;
 
     [TextArea(3, 8)]
-    public string Description;
+    public string description;
 
-    public float MinOperativeVoltage;
-    public float MaxOperativeVoltage;
-    public ComponentType ComponentType;
+    public float minOperativeVoltage;
+    public float maxOperativeVoltage;
+    public ComponentType componentType;
 }
