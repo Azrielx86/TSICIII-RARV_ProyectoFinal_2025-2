@@ -1,5 +1,12 @@
-# TSICIII-RARV_ProyectoFinal_2025-2
+![ElektronikAR](./docs/img/banner.png)
+
+# ElektronikAR
+
 Proyecto final para la materia "Temas Selectos de Ingeniería en Computación III: Realidad Aumentada y Realidad Virtual"
+
+## Documentación
+
+[Manual técnico](./docs/TechManual.md)
 
 ## Temática a implementar
 La electrónica es una disciplina clave en la formación en el área de la ingeniería, principalmente aquellas relacionadas al área eléctrica. Sin embargo, los estudiantes principiantes pueden enfrentar dificultades para identificar componentes, comprender conexiones y realizar montajes básicos.
