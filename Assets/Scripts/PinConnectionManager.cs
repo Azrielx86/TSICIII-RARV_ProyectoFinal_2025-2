@@ -2,13 +2,16 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using NUnit.Framework;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class PinConnectionManager : MonoBehaviour
 {
     public GameObject markerPrefab;
+    public Transform currentConnectionsPanel;
 
     [CanBeNull]
     private GpioPin _connectionA;
@@ -20,19 +23,32 @@ public class PinConnectionManager : MonoBehaviour
 
     public readonly List<PinConnection> ActiveConnections = new();
 
-    public Material lineMaterial;
+    private void Start()
+    {
+        currentConnectionsPanel.gameObject.SetActive(false);
+        currentConnectionsPanel.Find("Source").GetComponent<TMP_Text>().text = "";
+        currentConnectionsPanel.Find("Destination").GetComponent<TMP_Text>().text = "";
+    }
 
     public void SelectPin(GpioPin pin)
     {
+        currentConnectionsPanel.gameObject.SetActive(true);
         if (_connectionA is null)
         {
             _connectionA = pin;
             MarkPin(_connectionA);
+
+            var sourceText = currentConnectionsPanel.Find("Source").GetComponent<TMP_Text>();
+            var src = pin.transform.parent.GetComponentInParent<ElectronicComponent>().name;
+            sourceText.text = $"{src} - {pin.id}";
         }
         else if (_connectionB is null)
         {
             _connectionB = pin;
             MarkPin(_connectionB);
+            var destination = currentConnectionsPanel.Find("Destination").GetComponent<TMP_Text>();
+            var dst = pin.transform.parent.GetComponentInParent<ElectronicComponent>().name;
+            destination.text = $"{dst} - {pin.id}";
         }
         else
         {
@@ -111,9 +127,10 @@ public class PinConnectionManager : MonoBehaviour
             Debug.LogWarning("Invalid connection!");
         }
 
-        _connectionA = null;
-        _connectionB = null;
-        _activeMarkers.Clear();
+        currentConnectionsPanel.gameObject.SetActive(false);
+        currentConnectionsPanel.Find("Source").GetComponent<TMP_Text>().text = "";
+        currentConnectionsPanel.Find("Destination").GetComponent<TMP_Text>().text = "";
+        CleanConnections();
     }
 
     public void RemoveConnection(PinConnection connection)
@@ -138,6 +155,15 @@ public class PinConnectionManager : MonoBehaviour
 
     public void ShowAllConnections() => ActiveConnections.ForEach(ShowConnection);
 
+    public void CleanConnections()
+    {
+        currentConnectionsPanel.gameObject.SetActive(false);
+        currentConnectionsPanel.Find("Source").GetComponent<TMP_Text>().text = "";
+        currentConnectionsPanel.Find("Destination").GetComponent<TMP_Text>().text = "";
+        _connectionA = null;
+        _connectionB = null;
+        _activeMarkers.Clear();
+    }
 
     public void ShowConnection(PinConnection connection)
     {
@@ -158,6 +184,8 @@ public class PinConnectionManager : MonoBehaviour
         Destroy(lineGameObject, 5);
         Destroy(diffuseMat, 5);
     }
+
+    public void ResetScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     private static Color GenerateRandomColor(Color mix, float mixRatio)
     {
