@@ -430,9 +430,9 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: marcador3
+  mTrackableName: ar_marker3
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/MultiTarget.xml
+  mDataSetPath: Vuforia/ElektronikAR.xml
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 1
@@ -472,8 +472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 67826781}
   mHiddenRoot: {fileID: 0}
-  mTargetName: marcador3
-  mDatasetName: Vuforia/MultiTarget.xml
+  mTargetName: ar_marker3
+  mDatasetName: Vuforia/ElektronikAR.xml
   mCastedBehaviour: {fileID: 67826781}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -3872,9 +3872,9 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: marcador2
+  mTrackableName: ar_marker2
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/MultiTarget.xml
+  mDataSetPath: Vuforia/ElektronikAR.xml
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 1
@@ -3914,8 +3914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1542475896}
   mHiddenRoot: {fileID: 0}
-  mTargetName: marcador2
-  mDatasetName: Vuforia/MultiTarget.xml
+  mTargetName: ar_marker2
+  mDatasetName: Vuforia/ElektronikAR.xml
   mCastedBehaviour: {fileID: 1542475896}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -4707,9 +4707,9 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: portalturret
+  mTrackableName: ar_marker
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/MultiTarget.xml
+  mDataSetPath: Vuforia/ElektronikAR.xml
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 1
@@ -4749,8 +4749,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 2003598382}
   mHiddenRoot: {fileID: 0}
-  mTargetName: portalturret
-  mDatasetName: Vuforia/MultiTarget.xml
+  mTargetName: ar_marker
+  mDatasetName: Vuforia/ElektronikAR.xml
   mCastedBehaviour: {fileID: 2003598382}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -5024,9 +5024,9 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: marcador5
+  mTrackableName: ar_marker4
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/MultiTarget.xml
+  mDataSetPath: Vuforia/ElektronikAR.xml
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 1
@@ -5088,8 +5088,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 2042325745}
   mHiddenRoot: {fileID: 0}
-  mTargetName: marcador5
-  mDatasetName: Vuforia/MultiTarget.xml
+  mTargetName: ar_marker4
+  mDatasetName: Vuforia/ElektronikAR.xml
   mCastedBehaviour: {fileID: 2042325745}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -5383,9 +5383,9 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: marcador1
+  mTrackableName: ar_marker1
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/MultiTarget.xml
+  mDataSetPath: Vuforia/ElektronikAR.xml
   mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 1
@@ -5425,8 +5425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 2127201519}
   mHiddenRoot: {fileID: 0}
-  mTargetName: marcador1
-  mDatasetName: Vuforia/MultiTarget.xml
+  mTargetName: ar_marker1
+  mDatasetName: Vuforia/ElektronikAR.xml
   mCastedBehaviour: {fileID: 2127201519}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
