@@ -71,7 +71,7 @@ public class PinSelectorUI : MonoBehaviour
 
     public void CloseMenu() => uiAnimator.SetBool(IsOpen, false);
 
-    private static Color LumaText(Color color) =>
+    public static Color LumaText(Color color) =>
         0.299f * color.r + 0.587f * color.g + 0.114f * color.b > 0.5f ? Color.black : Color.white;
 
     private static Color GetColorFromPinType(PinType pin) => pin switch

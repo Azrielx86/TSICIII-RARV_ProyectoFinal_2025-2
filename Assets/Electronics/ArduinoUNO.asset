@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c258f509794d42bb910da19c8df7313a, type: 3}
   m_Name: ArduinoUNO
   m_EditorClassIdentifier: 
-  ComponentName: Arduino UNO
-  Description: The Arduino UNO is the best board to get started with electronics
+  componentName: Arduino UNO
+  componentManufacturer: Arduino
+  description: The Arduino UNO is the best board to get started with electronics
     and coding. If this is your first experience tinkering with the platform, the
     UNO is the most robust board you can start playing with. The UNO is the most
     used and documented board of the whole Arduino family.
-  MinOperativeVoltage: 5
-  MaxOperativeVoltage: 5
-  ComponentType: 0
+  minOperativeVoltage: 5
+  maxOperativeVoltage: 5
+  componentType: 0
+  availableInterfaces: 000000000100000002000000

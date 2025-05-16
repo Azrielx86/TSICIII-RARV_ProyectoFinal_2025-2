@@ -47,6 +47,8 @@ MonoBehaviour:
   id: Echo
   type: 00000000
   connectionPount: {fileID: 7264439303185096626}
+  compatiblePins: 00000000
+  connectedPins: []
 --- !u!1 &3202952296780658170
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +96,8 @@ MonoBehaviour:
   id: Trigger
   type: 00000000
   connectionPount: {fileID: 1982654104397557884}
+  compatiblePins: 00000000
+  connectedPins: []
 --- !u!1 &4511724503033905297
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +145,8 @@ MonoBehaviour:
   id: GND
   type: 02000000
   connectionPount: {fileID: 5538389955076174875}
+  compatiblePins: 00000000
+  connectedPins: []
 --- !u!1 &7526118942132553273
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,12 +195,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: HCSR-04
+  componentInfo: {fileID: 11400000, guid: 06cfdd3f8d38dc84cb4f631d9f138ed4, type: 2}
   pins:
   - {fileID: 3891508575883886404}
   - {fileID: 1566921016320099594}
   - {fileID: 2043927400337928133}
   - {fileID: 8360980656756453210}
   selectorUI: {fileID: 0}
+  canBeActivated: 0
+  requiredActivatePins: []
 --- !u!65 &5109300115053940969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -298,6 +307,8 @@ MonoBehaviour:
   id: VCC
   type: 05000000
   connectionPount: {fileID: 8048270625483258865}
+  compatiblePins: 00000000
+  connectedPins: []
 --- !u!1001 &7160738347541509982
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -30,13 +30,26 @@ public class ElectronicComponent : MonoBehaviour
         activator.OnInvalidConnection();
     }
 
+    private void OnComponentClicked()
+    {
+        var infoManager = FindFirstObjectByType<ComponentInfoManager>();
+        if (infoManager.infoViewMode)
+        {
+            infoManager.OpenUIForComponent(this);
+        }
+        else
+        {
+            selectorUI.ShowPins(pins);
+        }
+    }
+    
     private void OnMouseDown()
     {
 #if !PLATFORM_ANDROID || UNITY_EDITOR
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        selectorUI.ShowPins(pins);
+        OnComponentClicked();
 #endif
     }
 
@@ -97,7 +110,7 @@ public class ElectronicComponent : MonoBehaviour
             var ray = Camera.main.ScreenPointToRay(touch.position);
             if (!Physics.Raycast(ray, out RaycastHit hit)) continue;
             if (hit.transform == transform)
-                selectorUI.ShowPins(pins);
+                OnComponentClicked();
         }
 #endif
     }
