@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c258f509794d42bb910da19c8df7313a, type: 3}
+  m_Name: HCSR04
+  m_EditorClassIdentifier: 
+  componentName: HCSR04
+  componentManufacturer: HCSR04
+  description: "El sensor HC-SR04 es un sensor de distancia de bajo costo que utiliza
+    ultrasonido para determinar la distancia de un objeto en un rango de 2 a 450
+    cm. Destaca por su peque\xF1o tama\xF1o, bajo consumo energ\xE9tico, buena precisi\xF3n
+    y excelente precio. El sensor HC-SR04 es el m\xE1s utilizado dentro de los sensores
+    de tipo ultrasonido, principalmente por la cantidad de informaci\xF3n y proyectos
+    disponibles en la web. De igual forma es el m\xE1s empleado en proyectos de rob\xF3tica
+    como robots laberinto o sumo, y en proyectos de automatizaci\xF3n como sistemas
+    de medici\xF3n de nivel o distancia."
+  minOperativeVoltage: 3.3
+  maxOperativeVoltage: 5
+  componentType: 1

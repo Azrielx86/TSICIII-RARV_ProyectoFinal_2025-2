@@ -1069,6 +1069,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322900077}
   m_CullTransparentMesh: 1
+--- !u!1 &338744094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338744095}
+  - component: {fileID: 338744096}
+  m_Layer: 0
+  m_Name: ComponentInfoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &338744095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338744094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &338744096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338744094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbebe1aab2503164b808178e2faaaa61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoViewMode: 0
+  uiAnimator: {fileID: 54204158}
+  componentUI: {fileID: 54204155}
+  modeBtnIcon: {fileID: 1422386238}
+  infoModeImage: {fileID: -6973779124946507235, guid: 84356da12a8249c499e709f4475f15d8,
+    type: 3}
+  connectionModeImage: {fileID: 8673857883314834134, guid: 84356da12a8249c499e709f4475f15d8,
+    type: 3}
 --- !u!1 &388228244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,7 +1411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 416007632}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 338744096}
+        m_TargetAssemblyTypeName: ComponentInfoManager, Assembly-CSharp
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &416007632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,7 +1687,7 @@ GameObject:
   - component: {fileID: 523887518}
   - component: {fileID: 523887517}
   m_Layer: 5
-  m_Name: CreateConnection (1)
+  m_Name: ToggleInfoAndConnect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1693,9 +1757,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1673466984}
-        m_TargetAssemblyTypeName: PinConnectionManager, Assembly-CSharp
-        m_MethodName: CreateConnection
+      - m_Target: {fileID: 338744096}
+        m_TargetAssemblyTypeName: ComponentInfoManager, Assembly-CSharp
+        m_MethodName: ToggleInfoAndConnectionMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1947,14 +2011,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3564,7 +3628,7 @@ GameObject:
   - component: {fileID: 1422386239}
   - component: {fileID: 1422386238}
   m_Layer: 5
-  m_Name: AddIcon
+  m_Name: ModeIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4377,7 +4441,7 @@ GameObject:
   - component: {fileID: 1870266114}
   - component: {fileID: 1870266113}
   m_Layer: 5
-  m_Name: Foreground
+  m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5546,6 +5610,7 @@ RectTransform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 338744095}
   - {fileID: 1673466985}
   - {fileID: 1158845346}
   - {fileID: 705507995}
