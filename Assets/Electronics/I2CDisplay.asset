@@ -20,3 +20,4 @@ MonoBehaviour:
   minOperativeVoltage: 3.3
   maxOperativeVoltage: 5
   componentType: 3
+  availableInterfaces: 02000000

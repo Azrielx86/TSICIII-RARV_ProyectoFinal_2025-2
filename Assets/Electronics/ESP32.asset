@@ -19,15 +19,8 @@ MonoBehaviour:
     cosas). Integra en una placa el SoM ESP-WROOM-32 que tiene como base al SoC ESP32,
     el conversor USB-serial CP2102 necesario para programar por USB el ESP32, reguladores
     de voltaje y leds indicadores. La plataforma ESP32 es la evoluci\xF3n del ESP8266
-    mejorando sus capacidades de comunicaci\xF3n y procesamiento computacional. A
-    nivel de conectividad permite utilizar diversos protocolos de comunicaci\xF3n
-    inal\xE1mbrica como: WiFi, Bluetooth y BLE. En cuanto a poder de procesamiento
-    posee un CPU 32-bit de dos n\xFAcleos de hasta 240MHz y que se pueden controlar
-    independientemente. Adem\xE1s incluye internamente una gran cantidad de perif\xE9ricos
-    para la conexi\xF3n con: sensores t\xE1ctiles capacitivos, sensor de efecto Hall,
-    amplificadores de bajo ruido, interfaz para tarjeta SD, Ethernet, SPI de alta
-    velocidad, UART, I2S e I2C. Aplicado en Mini Servidores Web, Procesamiento digital,
-    Webcams, C\xE1mara IP, Rob\xF3tica m\xF3vil, Dom\xF3tica y m\xE1s."
+    mejorando sus capacidades de comunicaci\xF3n y procesamiento computacional."
   minOperativeVoltage: 3.3
   maxOperativeVoltage: 3.3
   componentType: 0
+  availableInterfaces: 000000000100000002000000

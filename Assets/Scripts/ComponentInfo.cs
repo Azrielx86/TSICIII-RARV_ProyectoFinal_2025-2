@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ComponentInfo", menuName = "Electronics/Component Info")]
@@ -13,4 +13,6 @@ public class ComponentInfo : ScriptableObject
     public float minOperativeVoltage;
     public float maxOperativeVoltage;
     public ComponentType componentType;
+
+    public List<ComponentInterfaceType> availableInterfaces = new();
 }
