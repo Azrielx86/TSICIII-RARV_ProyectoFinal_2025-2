@@ -341,7 +341,7 @@ MonoBehaviour:
   id: GPIO9
   type: 0000000006000000
   connectionPount: {fileID: 3397919602759094471}
-  compatiblePins: 00000000
+  compatiblePins: 0000000006000000
   connectedPins: []
 --- !u!1 &1370374568276538719
 GameObject:
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   id: GPIO6
   type: 0000000006000000
   connectionPount: {fileID: 1994534619139457671}
-  compatiblePins: 00000000
+  compatiblePins: 0000000006000000
   connectedPins: []
 --- !u!1 &5369387253450324187
 GameObject:
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   id: GPIO10
   type: 0000000006000000
   connectionPount: {fileID: 2896137081712090578}
-  compatiblePins: 00000000
+  compatiblePins: 0000000006000000
   connectedPins: []
 --- !u!1 &6111635877029248464
 GameObject:
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   id: GPIO5
   type: 0000000006000000
   connectionPount: {fileID: 1115777335526315047}
-  compatiblePins: 00000000
+  compatiblePins: 0000000006000000
   connectedPins: []
 --- !u!1 &6717161406058466076
 GameObject:
@@ -1414,7 +1414,7 @@ MonoBehaviour:
   id: GPIO11
   type: 000000000b00000006000000
   connectionPount: {fileID: 8149319703623785769}
-  compatiblePins: 00000000
+  compatiblePins: 0000000006000000
   connectedPins: []
 --- !u!1 &8576130809019283014
 GameObject:
