@@ -12,6 +12,9 @@ Proyecto final para la materia "Temas Selectos de Ingeniería en Computación II
 
 [Análisis de viabilidad y costos](./docs/FeasibilityAnalysis.md)
 
+>[!NOTE]
+>La documentación en formato PDF y el archivo APK de la aplicación se encuentran en el apartado **Releases**.
+
 ## Temática a implementar
 La electrónica es una disciplina clave en la formación en el área de la ingeniería, principalmente aquellas relacionadas al área eléctrica. Sin embargo, los estudiantes principiantes pueden enfrentar dificultades para identificar componentes, comprender conexiones y realizar montajes básicos.
 Esta aplicación tiene el objetivo de ayudar a comprender y conocer los diversos componentes electrónicos que un estudiante en ingeniería puede llegar a utilizar, desde piezas simples como resistencias, capacitores o switches, hasta tarjetas y microcontroladores que se llegan a utilizar, como Arduino UNO, ESP32 Altera DE10 Lite o Raspberry PI.
