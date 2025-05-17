@@ -12,6 +12,8 @@ Proyecto final para la materia "Temas Selectos de Ingeniería en Computación II
 
 [Análisis de viabilidad y costos](./docs/FeasibilityAnalysis.md)
 
+[Demo de funcionamiento](https://youtube.com/shorts/4_kVw50ruT0?feature=share)
+
 >[!NOTE]
 >La documentación en formato PDF y el archivo APK de la aplicación se encuentran en el apartado **Releases**.
 
